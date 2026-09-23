@@ -79,10 +79,13 @@ nav a {
     font-size: 3rem;
 }
 
-nav a:visited {
+nav a:link {
     color: inherit;
 }
 
+nav a:visited {
+    color: inherit;
+}
 /* Área que envolve as seções da página */
 main {
     
