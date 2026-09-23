@@ -222,6 +222,98 @@ main {
 }
 
 
+/* CARROSSEL */
+
+/* =========================================
+   SEÇÃO: CARROSSEL DE FOTOS
+   ========================================= */
+
+#carrossel {
+    width: 100%;
+    min-height: 100vh;
+    padding: 5vh 5%;
+    
+    /* Centraliza o carrossel no meio da secção */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#bloco-carrossel {
+    display: flex;
+    gap: 20px; /* O espaço entre as fotos */
+    width: 100%;
+    max-width: 1000px; /* Define o tamanho máximo do bloco no computador */
+    
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 20px; /* Espaço para a barra de rolagem rosa não sobrepor a foto */
+}
+
+#bloco-carrossel img {
+    /* A MÁGICA DA PROPORÇÃO: Calcula 50% do espaço e subtrai 10px (metade do gap de 20px) */
+    flex: 0 0 calc(50% - 10px); 
+    
+    height: 60vh;
+    object-fit: cover;
+    border-radius: 12px;
+    
+    /* Cola a foto pelo canto esquerdo, garantindo que a segunda apareça inteira ao lado */
+    scroll-snap-align: start; 
+}
+
+
+
+/* Regra extra opcional para telemóveis: voltar a mostrar apenas 1 foto em ecrãs pequenos */
+@media (max-width: 768px) {
+    #bloco-carrossel img {
+        flex: 0 0 100%;
+        scroll-snap-align: center;
+    }
+}
+
+/* =========================================
+   ESTILIZAÇÃO DA BARRA DE ROLAGEM (PC)
+   ========================================= */
+
+/* Tamanho da barra */
+#bloco-carrossel::-webkit-scrollbar {
+    height: 8px; 
+}
+
+/* Fundo do trilho da barra */
+#bloco-carrossel::-webkit-scrollbar-track {
+    background: #F9EDE3; 
+    border-radius: 10px;
+}
+
+/* A "pegadeira" da barra de rolagem */
+#bloco-carrossel::-webkit-scrollbar-thumb {
+    background: #e84c84; /* Utiliza o mesmo tom de rosa dos seus textos */
+    border-radius: 10px;
+}
+
+#bloco-carrossel::-webkit-scrollbar-thumb:hover {
+    background: #3E4826; /* Fica verde escuro ao passar o rato */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* =========================================
    RESPONSIVIDADE (TABLETS E CELULARES)
    ========================================= */
