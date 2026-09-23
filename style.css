@@ -1,0 +1,302 @@
+/* =========================================
+   RESET E CONFIGURAÇÕES BASE
+   ========================================= */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   ESTRUTURA GERAL DO SITE
+   ========================================= */
+
+/* Contêiner principal que envolve toda a página */
+#bloco-principal {
+    background-color: #FFFFFF;
+}
+
+/* Menu de navegação superior */
+nav {
+    padding: 1vh 52px 0 52px;
+    width: 100%;
+    height: 5vh;
+    font-family: "Instrument serif";
+    color: #e84c84;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 3rem;
+}
+
+nav a:visited {
+    color: inherit;
+}
+
+/* Área que envolve as seções da página */
+main {
+    
+}
+
+
+/* =========================================
+   SEÇÃO 1: CAPA (SAVE THE DATE)
+   ========================================= */
+
+#bloco-main {
+    padding: 20vh 52px 0 52px;
+    font-family: "Instrument sans";
+    color: #e84c84;
+    width: 100%;
+    height: 95vh;
+}
+
+/* Tipografia e alinhamentos da Capa */
+.principal {
+    text-align: center;
+}
+
+#data, #save-the-date {
+    font-size: clamp(1rem, 2rem, 3rem);
+    padding: 5vh 0;
+    font-family:  "Montserrat", sans-serif;
+}
+
+#nomes {
+    font-family: "Instrument serif";
+    font-style: normal;
+    font-size: clamp(6rem, 8rem, 9rem);
+}
+
+#nomes span, nav a span {
+    color: #3E4826;
+}
+
+#imagem-1 {
+    width: 275px;
+    height: 90px;
+}
+
+
+/* =========================================
+   SEÇÃO 2: SOBRE O CASAMENTO
+   ========================================= */
+
+/* Fundo geral da seção com a imagem bg1.png */
+#sobre-casamento {
+    
+    color: #3E4826;
+    width: 100%;
+    min-height: 100vh;
+    padding: 5vh 5% 5vh 5%; 
+    color: #000000;
+    background-image: url("./images/bg1.png");
+    background-size: 90vh;
+}
+
+/* Caixa de conteúdo branca sobre o fundo */
+#bg-color {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 4vw;
+    padding: 10vh 10% 10vh 10%; 
+    background-color: #FFFFFF;
+}
+
+/* --- Coluna da Esquerda: Textos --- */
+#texto-sobre-casamento {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+}
+
+#titulo {
+    font-family: "Instrument Serif", serif;
+    font-size: clamp(3.5rem, 5.5vw, 6rem);
+    margin-top: 0 !important; 
+    padding-top: 0;
+    line-height: 0.9; 
+    display: block;
+}
+
+/* Configurações dos parágrafos */
+.paragrafo-sobre {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    text-align: justify;
+    margin-bottom: 2vh;
+}
+
+.paragrafo-sobre span{
+    font-weight: bolder;
+}
+
+.paragrafo-sobre:nth-of-type(1) {
+    padding-top: 4vh;
+}
+
+/* Assinatura e Data na seção Sobre */
+.paragrafo-sobre:nth-of-type(2) {
+    font-style: italic;
+    margin-top: 2vh;
+}
+
+.paragrafo-sobre:nth-of-type(3) {
+    font-style: italic;
+}
+
+/* --- Coluna da Direita: Imagem do Casal --- */
+.imagem-sobre {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+}
+
+.imagem-sobre img {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: cover;
+    height: auto;
+    display: block;
+    margin-top: 0;
+}
+
+
+/* =========================================
+   RESPONSIVIDADE (TABLETS E CELULARES)
+   ========================================= */
+
+@media (max-width: 768px) {
+    
+    /* Centraliza o menu e reduz as margens laterais */
+    nav {
+        padding: 2vh 20px 0 20px;
+        text-align: center;
+        
+    }
+
+    nav a{
+        font-size: clamp(1rem, 7vw, 1.5rem);
+    }
+    /* Reduz paddings laterais da capa para evitar quebra de linha indesejada */
+    #bloco-main {
+        padding: 5vh 20px 5vh 20px;
+        height: 20%; 
+        /*min-height: 60vh;*/
+    }
+
+    /* Ajusta o tamanho da fonte dos nomes para caber nos ecrãs estreitos */
+    #nomes {
+        font-size: clamp(2.5rem, 15vw, 4.5rem);
+        
+    }
+    
+    #data, #save-the-date{
+        font-size: clamp(1rem, 7vw, 1.5rem);
+    }
+
+    #imagem-1 {
+        width: 100px;
+        height: auto;
+    }
+
+    /* Transforma o bloco "Sobre" de linha (lado a lado) para coluna (empilhado) */
+    #bg-color {
+        flex-direction: column;
+        align-items: center;
+        padding: 5vh 10% 5vh 10%;
+        gap: 8vw;
+    }
+
+    /* Centraliza o contêiner de textos no telemóvel */
+    #texto-sobre-casamento {
+        align-items: center;
+    }
+
+    #titulo {
+        text-align: center;
+        font-size: clamp(3rem, 12vw, 4rem);
+    }
+
+    
+    /* Mantém o texto justificado conforme solicitado */
+    .paragrafo-sobre {
+        text-align: justify; 
+        font-size: 1rem;
+    }
+
+    /* Centraliza a assinatura e a data, já que o texto acima está justificado */
+    .paragrafo-sobre:nth-of-type(2),
+    .paragrafo-sobre:nth-of-type(3) {
+        text-align: left;
+        width: 100%;
+    }
+
+    /* Centraliza a imagem e ajusta a proporção para não ocupar o ecrã inteiro */
+    .imagem-sobre {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .imagem-sobre img {
+        max-height: 50vh;
+        width: 100%;
+    }
+}
