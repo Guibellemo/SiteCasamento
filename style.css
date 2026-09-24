@@ -536,7 +536,8 @@ footer a:visited {
     }
 
     #bloco-carrossel img {
-        height: 50vh;
+        width: 100%;
+        
     }
 
     #carrossel-anterior,
