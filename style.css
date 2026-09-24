@@ -251,7 +251,12 @@ main {
 #janela-carrossel {
     width: 100%;
     overflow: hidden;
-    cursor: pointer;
+    cursor: grab;
+    touch-action: pan-y;
+}
+
+#janela-carrossel.arrastando {
+    cursor: grabbing;
 }
 
 #bloco-carrossel {
