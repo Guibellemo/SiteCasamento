@@ -59,8 +59,40 @@
 
                 <button id="carrossel-proximo" type="button" aria-label="Próxima foto">&#10095;</button>
             </div>
+
+            <div id="forms-pix">
+
+                <div id="forms">
+                    <form action="https://api.sheetmonkey.io/form/r3D5imDfHJHSDpaRDyQVVk" method="post">
+                        <h1 id="titulo-forms">Confirme sua presença</h1>
+                        <ul>
+                            <li><label>Nome: <input type="text" name="Name" placeholder="Nome completo"
+                                        required /></label></li>
+                            <li><label>E-mail: <input type="email" name="Email"
+                                        placeholder="Seu melhor e-mail" /></label></li>
+                            <li><label>Celular: <input type="tel" name="Phone Number"
+                                        placeholder="Seu celular com DDD" /></label></li>
+                            <li><input type="hidden" name="Created" value="x-sheetmonkey-current-date-time" /></li>
+                        </ul>
+                        <input type="submit" value="Sign Up" />
+                    </form>
+                </div>
+
+                <div id="pix">
+                    <h1 id="titulo-pix">PIX</h1>
+                    <h2 id="sub-titulo-pix">
+                        Se você quiser ajudar nessa fase, qualquer valor será bem-vindo.
+                    </h1>
+                    <img src=".\images\qrcode.png" alt="">
+                </div>
+            </div>
+
+
         </main>
     </div>
+    <footer>
+        <a href="index.html">J<span>&</span>G</a>
+    </footer>
 
     <script src="carousel.js"></script>
 </body>

@@ -2,19 +2,87 @@
    RESET E CONFIGURAÇÕES BASE
    ========================================= */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -23,8 +91,17 @@ time, mark, audio, video {
     vertical-align: baseline;
 }
 
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
     display: block;
 }
 
@@ -32,16 +109,20 @@ body {
     line-height: 1;
 }
 
-ol, ul {
+ol,
+ul {
     list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
     quotes: none;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
     content: '';
     content: none;
 }
@@ -51,7 +132,9 @@ table {
     border-spacing: 0;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -84,9 +167,7 @@ nav a:visited {
     color: inherit;
 }
 
-main {
-    
-}
+main {}
 
 /* =========================================
    SEÇÃO 1: CAPA (SAVE THE DATE)
@@ -104,10 +185,11 @@ main {
     text-align: center;
 }
 
-#data, #save-the-date {
+#data,
+#save-the-date {
     font-size: clamp(1rem, 2rem, 3rem);
     padding: 5vh 0;
-    font-family:  "Montserrat", sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 
 #nomes {
@@ -116,7 +198,8 @@ main {
     font-size: clamp(6rem, 8rem, 9rem);
 }
 
-#nomes span, nav a span {
+#nomes span,
+nav a span {
     color: #3E4826;
 }
 
@@ -125,15 +208,20 @@ main {
     height: 90px;
 }
 
+
+
+
+
+
+
 /* =========================================
    SEÇÃO 2: SOBRE O CASAMENTO
    ========================================= */
 
 #sobre-casamento {
-    color: #3E4826;
     width: 100%;
     min-height: 100vh;
-    padding: 5vh 5% 5vh 5%; 
+    padding: 5vh 5% 5vh 5%;
     color: #000000;
     background-image: url("./images/bg1.png");
     background-size: 90vh;
@@ -144,7 +232,7 @@ main {
     align-items: flex-start;
     justify-content: space-between;
     gap: 4vw;
-    padding: 10vh 12% 10vh 12%; 
+    padding: 10vh 12% 10vh 12%;
     background-color: #FFFFFF;
     height: 90vh;
 }
@@ -161,9 +249,9 @@ main {
 #titulo {
     font-family: "Instrument Serif", serif;
     font-size: clamp(3.5rem, 5.5vw, 6rem);
-    margin-top: 0 !important; 
+    margin-top: 0 !important;
     padding-top: 0;
-    line-height: 0.9; 
+    line-height: 0.9;
     display: block;
 }
 
@@ -175,7 +263,7 @@ main {
     margin-bottom: 2vh;
 }
 
-.paragrafo-sobre span{
+.paragrafo-sobre span {
     font-weight: bolder;
 }
 
@@ -218,15 +306,15 @@ main {
     --carrossel-gap: 20px;
 
     width: 100%;
-    min-height: 55vh;
+    min-height: 40vh;
     padding: 5% 10% 5% 10%;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
-    
-    
-    
+
+
+
 }
 
 #carrossel-anterior,
@@ -257,8 +345,8 @@ main {
     overflow: hidden;
     cursor: grab;
     touch-action: pan-y;
-    
-    
+
+
 }
 
 #janela-carrossel.arrastando {
@@ -268,8 +356,8 @@ main {
 #bloco-carrossel {
     display: flex;
     gap: var(--carrossel-gap);
-    
-    
+
+
 }
 
 #bloco-carrossel img {
@@ -279,14 +367,157 @@ main {
     -webkit-user-drag: none;
     user-select: none;
     pointer-events: none;
-    
-    
+
+
 }
 
 
 
 
+/*  FORMULARIO  */
 
+#forms-pix {
+    width: 100%;
+    min-height: 100%;
+    padding: 5vh 5% 5vh 5%;
+    color: #000000;
+
+    /* Adições para colocar lado a lado */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 5vw;
+
+    background-color: #8E9158;
+}
+
+#forms,
+#pix {
+    flex: 1;
+    /* Faz com que os dois lados ocupem espaços iguais */
+    height: 50vh;
+}
+
+/* Ajustes da Lista do Formulário */
+#forms ul {}
+
+#forms li {
+
+    font-family: "Montserrat", sans-serif;
+}
+
+#forms li:last-child {
+    margin-bottom: 5%;
+}
+
+#forms label {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.4;
+    padding-top: 2%;
+
+}
+
+
+
+#forms input[type="text"],
+#forms input[type="email"],
+#forms input[type="tel"] {
+    margin-top: 10px;
+    padding: 12px;
+    font-family: "Montserrat", sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+
+}
+
+/* Ajustes do Botão de Envio */
+#forms input[type="submit"] {
+    margin-top: 10px;
+    padding: 15px 40px;
+    background-color: #e84c84;
+    /* Utilizando a mesma cor de destaque do site */
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#forms input[type="submit"]:hover {
+    background-color: #3E4826;
+    /* Cor verde/oliva presente nos detalhes do site */
+}
+
+/*
+#forms{
+    background-color: aqua;
+}*/
+#pix {}
+
+#pix img {
+    width: 30%;
+    display: block;
+    margin-top: 2%;
+    margin-left: 20%;
+
+}
+
+#forms-pix h1 {
+    font-family: "Instrument Serif", serif;
+    font-size: clamp(2.5rem, 3.5vw, 4rem);
+    margin-top: 0 !important;
+    padding-top: 0;
+    line-height: 0.9;
+    display: block;
+    margin-bottom: 1%;
+}
+
+
+
+#forms-pix h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    padding-top: 2%;
+}
+
+
+
+
+/*  FOOTER  */
+
+footer {
+    padding: 1vh 52px 0 52px;
+    width: 100%;
+    height: 5vh;
+    font-family: "Instrument serif";
+    color: #e84c84;
+    border-top: 2px solid #ccc;
+    text-align: center;
+
+}
+
+footer a {
+    text-decoration: none;
+    font-size: 3rem;
+
+}
+
+footer a:link {
+    color: inherit;
+}
+
+footer a:visited {
+    color: inherit;
+}
 
 
 /* =========================================
@@ -316,20 +547,21 @@ main {
         text-align: center;
     }
 
-    nav a{
+    nav a {
         font-size: clamp(1rem, 7vw, 1.5rem);
     }
 
     #bloco-main {
         padding: 5vh 20px 5vh 20px;
-        height: 20%; 
+        height: 20%;
     }
 
     #nomes {
         font-size: clamp(2.5rem, 15vw, 4.5rem);
     }
-    
-    #data, #save-the-date{
+
+    #data,
+    #save-the-date {
         font-size: clamp(1rem, 7vw, 1.5rem);
     }
 
@@ -355,7 +587,7 @@ main {
     }
 
     .paragrafo-sobre {
-        text-align: justify; 
+        text-align: justify;
         font-size: 1rem;
     }
 
@@ -375,5 +607,46 @@ main {
         width: 100%;
     }
 
+
+    #forms-pix {
+        flex-direction: column;
+        gap: 10vw;
+        align-items: stretch; /* Faz com que as divs filhas estiquem até a largura total permitida pelo padding */
+    }
+
     
+    #forms, #pix {
+        width: 100%; /* Garante a ocupação total do espaço */
+        height: auto; /* Remove o limite de 50vh do desktop para o conteúdo não vazar no celular */
+    }
+    
+    
+
+    #forms-pix label,
+    #forms-pix h2 {
+        text-align: justify;
+        font-size: 1rem;
+    }
+
+    #forms-pix h1 {
+        margin-bottom: 10px;
+
+    }
+
+
+    
+
+    #pix img {
+        width: 40%;
+        display: block;
+        margin: 20px auto;
+        /* O 'auto' nas laterais empurra a imagem para o centro */
+    }
+
+
+    footer a {
+        font-size: clamp(1rem, 7vw, 1.5rem);
+    }
+
+
 }
