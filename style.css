@@ -144,8 +144,9 @@ main {
     align-items: flex-start;
     justify-content: space-between;
     gap: 4vw;
-    padding: 10vh 10% 10vh 10%; 
+    padding: 10vh 12% 10vh 12%; 
     background-color: #FFFFFF;
+    height: 90vh;
 }
 
 #texto-sobre-casamento {
@@ -201,8 +202,8 @@ main {
 
 .imagem-sobre img {
     max-width: 100%;
-    max-height: 70vh;
-    object-fit: cover;
+    max-height: 60vh;
+    object-fit: contain;
     height: auto;
     display: block;
     margin-top: 0;
@@ -218,7 +219,7 @@ main {
 
     width: 100%;
     min-height: 55vh;
-    padding: 5vh 10% 5vh 10%;
+    padding: 5% 10% 5% 10%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -257,6 +258,7 @@ main {
     cursor: grab;
     touch-action: pan-y;
     
+    
 }
 
 #janela-carrossel.arrastando {
@@ -267,16 +269,17 @@ main {
     display: flex;
     gap: var(--carrossel-gap);
     
+    
 }
 
 #bloco-carrossel img {
     flex: 0 0 calc((100% - (var(--carrossel-itens) - 1) * var(--carrossel-gap)) / var(--carrossel-itens));
     height: 50vh;
-    object-fit: cover;
+    object-fit: scale-down;
     -webkit-user-drag: none;
     user-select: none;
     pointer-events: none;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
     
 }
 
