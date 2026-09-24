@@ -217,12 +217,15 @@ main {
     --carrossel-gap: 20px;
 
     width: 100%;
-    min-height: 100vh;
+    min-height: 55vh;
     padding: 5vh 10% 5vh 10%;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
+    
+    
+    
 }
 
 #carrossel-anterior,
@@ -253,6 +256,7 @@ main {
     overflow: hidden;
     cursor: grab;
     touch-action: pan-y;
+    
 }
 
 #janela-carrossel.arrastando {
@@ -262,15 +266,18 @@ main {
 #bloco-carrossel {
     display: flex;
     gap: var(--carrossel-gap);
+    
 }
 
 #bloco-carrossel img {
     flex: 0 0 calc((100% - (var(--carrossel-itens) - 1) * var(--carrossel-gap)) / var(--carrossel-itens));
-    height: 60vh;
+    height: 50vh;
     object-fit: cover;
     -webkit-user-drag: none;
     user-select: none;
     pointer-events: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
 }
 
 
