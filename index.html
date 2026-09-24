@@ -46,29 +46,23 @@
             </div>
 
             <div id="carrossel">
-                <div id="bloco-carrossel">
-                    <img src=".\images\foto1.png" alt="">
-                    <img src=".\images\foto1.png" alt="">
-                    <img src=".\images\foto1.png" alt="">
+                <button id="carrossel-anterior" type="button" aria-label="Foto anterior">&#10094;</button>
+
+                <div id="janela-carrossel">
+                    <div id="bloco-carrossel">
+                        <img src="./images/foto1.png" alt="">
+                        <img src="./images/foto2.png" alt="">
+                        <img src="./images/foto3.png" alt="">
+                        <img src="./images/foto4.png" alt="">
+                    </div>
                 </div>
+
+                <button id="carrossel-proximo" type="button" aria-label="Próxima foto">&#10095;</button>
             </div>
         </main>
     </div>
 
-    <script>
-        const carrossel = document.getElementById('bloco-carrossel');
-
-        carrossel.addEventListener('wheel', (evento) => {
-            evento.preventDefault();
-            const direcao = evento.deltaY > 0 ? 1 : -1;
-            
-            // Calcula o salto baseado em mostrar 2 fotos por vez
-            const tamanhoPulo = carrossel.clientWidth / 2; 
-            
-            carrossel.scrollBy({ left: direcao * tamanhoPulo, behavior: 'smooth' });
-        }, { passive: false });
-    </script>
+    <script src="carousel.js"></script>
 </body>
-
 
 </html>

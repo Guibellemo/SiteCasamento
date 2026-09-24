@@ -55,17 +55,14 @@ table {
     box-sizing: border-box;
 }
 
-
 /* =========================================
    ESTRUTURA GERAL DO SITE
    ========================================= */
 
-/* Contêiner principal que envolve toda a página */
 #bloco-principal {
     background-color: #FFFFFF;
 }
 
-/* Menu de navegação superior */
 nav {
     padding: 1vh 52px 0 52px;
     width: 100%;
@@ -86,11 +83,10 @@ nav a:link {
 nav a:visited {
     color: inherit;
 }
-/* Área que envolve as seções da página */
+
 main {
     
 }
-
 
 /* =========================================
    SEÇÃO 1: CAPA (SAVE THE DATE)
@@ -104,7 +100,6 @@ main {
     height: 95vh;
 }
 
-/* Tipografia e alinhamentos da Capa */
 .principal {
     text-align: center;
 }
@@ -130,14 +125,11 @@ main {
     height: 90px;
 }
 
-
 /* =========================================
    SEÇÃO 2: SOBRE O CASAMENTO
    ========================================= */
 
-/* Fundo geral da seção com a imagem bg1.png */
 #sobre-casamento {
-    
     color: #3E4826;
     width: 100%;
     min-height: 100vh;
@@ -147,7 +139,6 @@ main {
     background-size: 90vh;
 }
 
-/* Caixa de conteúdo branca sobre o fundo */
 #bg-color {
     display: flex;
     align-items: flex-start;
@@ -157,7 +148,6 @@ main {
     background-color: #FFFFFF;
 }
 
-/* --- Coluna da Esquerda: Textos --- */
 #texto-sobre-casamento {
     flex: 1.2;
     display: flex;
@@ -176,7 +166,6 @@ main {
     display: block;
 }
 
-/* Configurações dos parágrafos */
 .paragrafo-sobre {
     font-family: "Montserrat", sans-serif;
     font-size: 1.5rem;
@@ -193,7 +182,6 @@ main {
     padding-top: 4vh;
 }
 
-/* Assinatura e Data na seção Sobre */
 .paragrafo-sobre:nth-of-type(2) {
     font-style: italic;
     margin-top: 2vh;
@@ -203,7 +191,6 @@ main {
     font-style: italic;
 }
 
-/* --- Coluna da Direita: Imagem do Casal --- */
 .imagem-sobre {
     flex: 1;
     display: flex;
@@ -221,92 +208,69 @@ main {
     margin-top: 0;
 }
 
-
 /* CARROSSEL */
 
-/* =========================================
-   SEÇÃO: CARROSSEL DE FOTOS
-   ========================================= */
-
 #carrossel {
+    /* --carrossel-itens define quantas fotos aparecem por vez.
+       Alterado no media query para deixar o carrossel responsivo. */
+    --carrossel-itens: 3;
+    --carrossel-gap: 20px;
+
     width: 100%;
     min-height: 100vh;
-    padding: 5vh 5%;
-    
-    /* Centraliza o carrossel no meio da secção */
+    padding: 5vh 10% 5vh 10%;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 20px;
+}
+
+#carrossel-anterior,
+#carrossel-proximo {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    color: #e84c84;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+#carrossel-anterior:hover,
+#carrossel-proximo:hover {
+    background-color: #e84c84;
+    color: #FFFFFF;
+}
+
+#janela-carrossel {
+    width: 100%;
+    overflow: hidden;
+    cursor: grab;
+}
+
+#janela-carrossel.arrastando {
+    cursor: grabbing;
 }
 
 #bloco-carrossel {
     display: flex;
-    gap: 20px; /* O espaço entre as fotos */
-    width: 100%;
-    max-width: 1000px; /* Define o tamanho máximo do bloco no computador */
-    
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 20px; /* Espaço para a barra de rolagem rosa não sobrepor a foto */
+    gap: var(--carrossel-gap);
 }
 
 #bloco-carrossel img {
-    /* A MÁGICA DA PROPORÇÃO: Calcula 50% do espaço e subtrai 10px (metade do gap de 20px) */
-    flex: 0 0 calc(50% - 10px); 
-    
+    flex: 0 0 calc((100% - (var(--carrossel-itens) - 1) * var(--carrossel-gap)) / var(--carrossel-itens));
     height: 60vh;
     object-fit: cover;
-    border-radius: 12px;
-    
-    /* Cola a foto pelo canto esquerdo, garantindo que a segunda apareça inteira ao lado */
-    scroll-snap-align: start; 
+    -webkit-user-drag: none;
+    user-select: none;
+    pointer-events: none;
 }
-
-
-
-/* Regra extra opcional para telemóveis: voltar a mostrar apenas 1 foto em ecrãs pequenos */
-@media (max-width: 768px) {
-    #bloco-carrossel img {
-        flex: 0 0 100%;
-        scroll-snap-align: center;
-    }
-}
-
-/* =========================================
-   ESTILIZAÇÃO DA BARRA DE ROLAGEM (PC)
-   ========================================= */
-
-/* Tamanho da barra */
-#bloco-carrossel::-webkit-scrollbar {
-    height: 8px; 
-}
-
-/* Fundo do trilho da barra */
-#bloco-carrossel::-webkit-scrollbar-track {
-    background: #F9EDE3; 
-    border-radius: 10px;
-}
-
-/* A "pegadeira" da barra de rolagem */
-#bloco-carrossel::-webkit-scrollbar-thumb {
-    background: #e84c84; /* Utiliza o mesmo tom de rosa dos seus textos */
-    border-radius: 10px;
-}
-
-#bloco-carrossel::-webkit-scrollbar-thumb:hover {
-    background: #3E4826; /* Fica verde escuro ao passar o rato */
-}
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -319,28 +283,39 @@ main {
    ========================================= */
 
 @media (max-width: 768px) {
-    
-    /* Centraliza o menu e reduz as margens laterais */
+    #carrossel {
+        --carrossel-itens: 1;
+        padding: 5vh 20px;
+        gap: 10px;
+    }
+
+    #bloco-carrossel img {
+        height: 50vh;
+    }
+
+    #carrossel-anterior,
+    #carrossel-proximo {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
     nav {
         padding: 2vh 20px 0 20px;
         text-align: center;
-        
     }
 
     nav a{
         font-size: clamp(1rem, 7vw, 1.5rem);
     }
-    /* Reduz paddings laterais da capa para evitar quebra de linha indesejada */
+
     #bloco-main {
         padding: 5vh 20px 5vh 20px;
         height: 20%; 
-        /*min-height: 60vh;*/
     }
 
-    /* Ajusta o tamanho da fonte dos nomes para caber nos ecrãs estreitos */
     #nomes {
         font-size: clamp(2.5rem, 15vw, 4.5rem);
-        
     }
     
     #data, #save-the-date{
@@ -352,7 +327,6 @@ main {
         height: auto;
     }
 
-    /* Transforma o bloco "Sobre" de linha (lado a lado) para coluna (empilhado) */
     #bg-color {
         flex-direction: column;
         align-items: center;
@@ -360,7 +334,6 @@ main {
         gap: 8vw;
     }
 
-    /* Centraliza o contêiner de textos no telemóvel */
     #texto-sobre-casamento {
         align-items: center;
     }
@@ -370,21 +343,17 @@ main {
         font-size: clamp(3rem, 12vw, 4rem);
     }
 
-    
-    /* Mantém o texto justificado conforme solicitado */
     .paragrafo-sobre {
         text-align: justify; 
         font-size: 1rem;
     }
 
-    /* Centraliza a assinatura e a data, já que o texto acima está justificado */
     .paragrafo-sobre:nth-of-type(2),
     .paragrafo-sobre:nth-of-type(3) {
         text-align: left;
         width: 100%;
     }
 
-    /* Centraliza a imagem e ajusta a proporção para não ocupar o ecrã inteiro */
     .imagem-sobre {
         justify-content: center;
         width: 100%;
@@ -394,4 +363,6 @@ main {
         max-height: 50vh;
         width: 100%;
     }
+
+    
 }
