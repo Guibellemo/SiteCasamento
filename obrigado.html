@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Redireciona para a home após 5 segundos -->
+    <meta http-equiv="refresh" content="5;url=index.html">
+    
+    <!-- Puxa os estilos base e o estilo específico desta página -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="obrigado.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <title>Obrigado! - Julianna e Guilherme</title>
+</head>
+
+<body>
+    <!-- Usamos a mesma estrutura de fundo branco do site -->
+    <div id="bloco-principal">
+        
+        <!-- A mesmíssima NAV do seu index.html -->
+        <nav>
+            <a href="index.html">J<span>&</span>G</a>
+        </nav>
+        
+        <main id="bloco-obrigado">
+            <h1 class="titulo-obrigado">Obrigado por confirmar sua presença!</h1>
+            <p class="texto-obrigado">Você retornará para a página inicial em 5 segundos...</p>
+        </main>
+        
+    </div>
+
+    <!-- Script de segurança para o redirecionamento -->
+    <script>
+        setTimeout(function() {
+            window.location.href = "index.html";
+        }, 5000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+/* =========================================
+   ESTILO DA PÁGINA DE OBRIGADO
+   ========================================= */
+
+#bloco-obrigado {
+    /* Centraliza o conteúdo na tela, descontando o tamanho da Nav */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh; 
+    padding: 0 52px;
+    text-align: center;
+}
+
+.titulo-obrigado {
+    font-family: "Instrument Serif", serif;
+    font-size: clamp(3rem, 5vw, 6rem);
+    color: #e84c84; /* Rosa da sua paleta */
+    margin-top: 0;
+    margin-bottom: 2vh;
+    font-weight: normal;
+    line-height: 0.9;
+}
+
+.texto-obrigado {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    color: #e84c84; /* Rosa da sua paleta */
+    line-height: 1.4;
+    opacity: 0.8;
+}
+
+/* =========================================
+   RESPONSIVIDADE (TABLETS E CELULARES)
+   ========================================= */
+
+@media (max-width: 768px) {
+    #bloco-obrigado {
+        padding: 0 20px;
+        height: 85vh; /* Ajuste sutil para o celular */
+    }
+
+    .titulo-obrigado {
+        /* Mesma proporção de clamp usada no seu H1 de mobile */
+        font-size: clamp(3rem, 12vw, 4rem); 
+    }
+
+    .texto-obrigado {
+        font-size: 1rem;
+    }
+}
