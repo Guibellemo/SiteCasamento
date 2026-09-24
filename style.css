@@ -515,6 +515,67 @@ main {}
 
 
 
+/*  MAPA    */
+
+
+#endereco {
+    width: 100%;
+    min-height: 100%;
+    padding: 5vh 5% 5vh 5%;
+    color: #000000;
+
+    /* Adições para colocar lado a lado */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 5vw;
+
+    background-color: #FDF9EF
+        /*#8E9158*/
+    ;
+}
+
+#endereco-escrito h1 {
+    font-family: "Instrument Serif", serif;
+    font-size: clamp(2.5rem, 3.5vw, 4rem);
+    margin-top: 0 !important;
+    padding-top: 0;
+    line-height: 0.9;
+    display: block;
+    margin-bottom: 1%;
+}
+
+#endereco-escrito p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    padding-top: 2%;
+}
+
+#endereco-escrito :nth-child(3) {
+    font-weight: bold;
+}
+
+#mapa iframe{
+    width: 900px; 
+    height: 450px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*  FOOTER  */
 
 footer {
@@ -687,7 +748,45 @@ footer a:visited {
     }
     
 
+
+    #endereco {
+        flex-direction: column; /* Empilha o texto e o mapa verticalmente */
+        align-items: stretch;
+        gap: 10vw;
+        padding: 5vh 20px; /* Reduz o padding lateral para encaixar melhor no celular */
+    }
+
+    #endereco-escrito, #mapa {
+        width: 100%;
+        height: auto;
+    }
+
+    #endereco-escrito h1 {
+        font-size: clamp(1.8rem, 8vw, 2.5rem); /* Ajusta o título para não vazar a tela, seguindo o padrão do forms */
+        
+        margin-bottom: 15px;
+    }
+
+    #endereco-escrito p {
+        font-size: 1rem; /* Reduz a fonte do texto para leitura confortável no celular */
+        
+    }
+
+    #mapa iframe {
+        width: 100%; /* Força o iframe a respeitar a largura do celular */
+        height: 350px; /* Reduz um pouco a altura para não cobrir a tela inteira de uma vez */
+    }
+
+
+
+
+
+
+
+
+
     footer a {
         font-size: clamp(1rem, 7vw, 1.5rem);
     }
+
 }
