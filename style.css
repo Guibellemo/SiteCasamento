@@ -167,6 +167,10 @@ nav a:visited {
     color: inherit;
 }
 
+#nomes span{
+    color: #3E4826;
+}
+
 main {}
 
 /* =========================================
@@ -198,10 +202,7 @@ main {}
     font-size: clamp(6rem, 8rem, 9rem);
 }
 
-#nomes span,
-nav a span {
-    color: #3E4826;
-}
+
 
 #imagem-1 {
     width: 275px;
@@ -368,7 +369,7 @@ nav a span {
     -webkit-user-drag: none;
     user-select: none;
     pointer-events: none;
-    
+
 
 
 }
@@ -390,7 +391,9 @@ nav a span {
     align-items: flex-start;
     gap: 5vw;
 
-    background-color: #FDF9EF/*#8E9158*/;
+    background-color: #FDF9EF
+        /*#8E9158*/
+    ;
 }
 
 #forms,
@@ -555,7 +558,7 @@ footer a:visited {
     #bloco-main {
         padding: 5vh 20px 5vh 20px;
         /* CORREÇÃO: Removido height: 20%; para evitar que a capa quebre */
-        height: auto; 
+        height: auto;
         min-height: 20vh;
     }
 
@@ -579,7 +582,7 @@ footer a:visited {
         padding: 5vh 10% 5vh 10%;
         gap: 8vw;
         /* CORREÇÃO: Anula o height: 90vh do desktop para que as fotos e textos possam crescer para baixo no celular */
-        height: auto; 
+        height: auto;
     }
 
     #texto-sobre-casamento {
@@ -617,7 +620,7 @@ footer a:visited {
         gap: 10vw;
         align-items: stretch;
         /* Ajuste do padding lateral para acomodar melhor em 360px */
-        padding: 5vh 20px; 
+        padding: 5vh 20px;
     }
 
     /* CORREÇÃO: Esta regra garante que qualquer imagem no formulário/pix (como a foto do casal) nunca ultrapasse a largura da tela */
@@ -625,15 +628,15 @@ footer a:visited {
         max-width: 100%;
         height: auto;
         display: block;
-        margin: 0 auto; 
+        margin: 0 auto;
     }
-    
-    #forms, 
+
+    #forms,
     #pix {
-        width: 100%; 
-        height: auto; 
+        width: 100%;
+        height: auto;
     }
-    
+
     #forms-pix label,
     #forms-pix h2 {
         text-align: justify;
@@ -648,7 +651,8 @@ footer a:visited {
     }
 
     #pix img {
-        width: 50%; /* QR Code levemente maior no celular para facilitar a leitura */
+        width: 50%;
+        /* QR Code levemente maior no celular para facilitar a leitura */
         display: block;
         margin: 20px auto;
     }
