@@ -591,7 +591,8 @@ footer a:visited {
 
     #titulo {
         text-align: center;
-        font-size: clamp(3rem, 12vw, 4rem);
+        /*font-size: clamp(3rem, 12vw, 4rem);*/
+        font-size: clamp(2.8rem, 8vw, 3.8rem);
     }
 
     .paragrafo-sobre {
@@ -647,7 +648,7 @@ footer a:visited {
         /* CORREÇÃO: A fonte mínima desceu de 2.5rem para 1.8rem para a palavra "Confirme" não vazar */
         font-size: clamp(1.8rem, 8vw, 2.5rem);
         margin-bottom: 10px;
-        text-align: center;
+        text-align: left;
     }
 
     #pix img {
