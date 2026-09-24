@@ -167,7 +167,7 @@ nav a:visited {
     color: inherit;
 }
 
-#nomes span{
+#nomes span {
     color: #3E4826;
 }
 
@@ -400,7 +400,7 @@ main {}
 #pix {
     flex: 1;
     /* Faz com que os dois lados ocupem espaços iguais */
-    height: 50vh;
+    height: 61vh;
 }
 
 /* Ajustes da Lista do Formulário */
@@ -467,12 +467,29 @@ main {}
 }*/
 #pix {}
 
-#pix img {
-    width: 30%;
-    display: block;
-    margin-top: 3%;
-    margin-left: 35%;
+#pix ul {
+    width: 100%;
+    font-size: 1.5rem;
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.4;
+    padding-top: 2%;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a linha de baixo no mobile */
+    gap: 0px;
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
 
+#pix ul li {
+    flex: 1 1 50%; /* No desktop, cada item ocupa 50% do espaço e ficam lado a lado */
+}
+
+#qrcode {
+    width: 100%;
+    max-width: 350px; /* Previne que a imagem do QR Code fique gigante em telas grandes */
+    display: block;
+    margin: 0 auto;   /* Centraliza o QR Code caso o container seja maior que ele */
 }
 
 #forms-pix h1 {
@@ -537,7 +554,7 @@ footer a:visited {
 
     #bloco-carrossel img {
         width: 100%;
-        
+
     }
 
     #carrossel-anterior,
@@ -652,12 +669,22 @@ footer a:visited {
         text-align: left;
     }
 
-    #pix img {
-        width: 50%;
-        /* QR Code levemente maior no celular para facilitar a leitura */
-        display: block;
-        margin: 20px auto;
+    #pix ul {
+        flex-direction: column; /* Empilha os itens verticalmente */
+        gap: 20px;              /* Adiciona respiro entre o texto e o QR Code */
     }
+
+    #pix ul li {
+        flex: 1 1 100%;         /* Força cada item (li) a ocupar a largura total da tela no celular */
+        text-align: center;     /* Centraliza o texto e a imagem para melhorar a estética mobile */
+    }
+
+    #qrcode {
+        width: 70%;             /* Evita que o QR Code encoste nas bordas do celular */
+        max-width: 250px;       /* Mantém um limite legível e não intrusivo */
+        margin: 0 auto; 
+    }
+    
 
     footer a {
         font-size: clamp(1rem, 7vw, 1.5rem);
