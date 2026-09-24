@@ -312,6 +312,7 @@ nav a span {
     align-items: center;
     justify-content: center;
     gap: 20px;
+    background-color: #8E9158;
 
 
 
@@ -367,6 +368,7 @@ nav a span {
     -webkit-user-drag: none;
     user-select: none;
     pointer-events: none;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
 
 
 }
@@ -388,7 +390,7 @@ nav a span {
     align-items: flex-start;
     gap: 5vw;
 
-    background-color: #8E9158;
+    background-color: #FDF9EF/*#8E9158*/;
 }
 
 #forms,
