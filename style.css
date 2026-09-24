@@ -521,12 +521,11 @@ footer a:visited {
     color: inherit;
 }
 
-
 /* =========================================
    RESPONSIVIDADE (TABLETS E CELULARES)
    ========================================= */
 
-@media (max-width: 768px) {
+@media (max-width: 780px) {
     #carrossel {
         --carrossel-itens: 1;
         padding: 5vh 20px;
@@ -555,7 +554,9 @@ footer a:visited {
 
     #bloco-main {
         padding: 5vh 20px 5vh 20px;
-        height: 20%;
+        /* CORREÇÃO: Removido height: 20%; para evitar que a capa quebre */
+        height: auto; 
+        min-height: 20vh;
     }
 
     #nomes {
@@ -577,6 +578,8 @@ footer a:visited {
         align-items: center;
         padding: 5vh 10% 5vh 10%;
         gap: 8vw;
+        /* CORREÇÃO: Anula o height: 90vh do desktop para que as fotos e textos possam crescer para baixo no celular */
+        height: auto; 
     }
 
     #texto-sobre-casamento {
@@ -609,21 +612,28 @@ footer a:visited {
         width: 100%;
     }
 
-
     #forms-pix {
         flex-direction: column;
         gap: 10vw;
-        align-items: stretch; /* Faz com que as divs filhas estiquem até a largura total permitida pelo padding */
+        align-items: stretch;
+        /* Ajuste do padding lateral para acomodar melhor em 360px */
+        padding: 5vh 20px; 
     }
 
-    
-    #forms, #pix {
-        width: 100%; /* Garante a ocupação total do espaço */
-        height: auto; /* Remove o limite de 50vh do desktop para o conteúdo não vazar no celular */
+    /* CORREÇÃO: Esta regra garante que qualquer imagem no formulário/pix (como a foto do casal) nunca ultrapasse a largura da tela */
+    #forms-pix img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto; 
     }
     
+    #forms, 
+    #pix {
+        width: 100%; 
+        height: auto; 
+    }
     
-
     #forms-pix label,
     #forms-pix h2 {
         text-align: justify;
@@ -631,24 +641,19 @@ footer a:visited {
     }
 
     #forms-pix h1 {
+        /* CORREÇÃO: A fonte mínima desceu de 2.5rem para 1.8rem para a palavra "Confirme" não vazar */
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
         margin-bottom: 10px;
-
+        text-align: center;
     }
-
-
-    
 
     #pix img {
-        width: 40%;
+        width: 50%; /* QR Code levemente maior no celular para facilitar a leitura */
         display: block;
         margin: 20px auto;
-        /* O 'auto' nas laterais empurra a imagem para o centro */
     }
-
 
     footer a {
         font-size: clamp(1rem, 7vw, 1.5rem);
     }
-
-
 }
