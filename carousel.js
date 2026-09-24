@@ -14,7 +14,6 @@
 
     // Precisa bater com o "gap" definido em #bloco-carrossel no CSS
     const GAP = 20;
-    const LIMIAR_ARRASTE = 0.2; // % do "passo" necessário para trocar de foto
 
     const slidesOriginais = Array.from(bloco.children);
     const totalOriginais = slidesOriginais.length;
@@ -40,25 +39,19 @@
 
     let indice = totalOriginais; // começa na primeira foto "real"
     let animando = false;
-    let arrastando = false;
-    let posInicial = 0;
-    let deslocamentoAtual = 0;
 
-    function itensPorTela() {
-        const valor = getComputedStyle(carrossel).getPropertyValue('--carrossel-itens');
-        const n = parseFloat(valor);
-        return n && n > 0 ? n : 1;
-    }
-
+    // Mede a distância real (em px) entre o início de uma foto e o início
+    // da próxima, direto no que está renderizado na tela. Isso evita
+    // depender de contas de padding/gap que podem variar no responsivo.
     function passo() {
-        const largura = janela.getBoundingClientRect().width;
-        return (largura + GAP) / itensPorTela();
+        const slides = bloco.children;
+        if (slides.length < 2) return janela.getBoundingClientRect().width + GAP;
+        return slides[1].getBoundingClientRect().left - slides[0].getBoundingClientRect().left;
     }
 
     function irPara(novoIndice, comTransicao) {
         bloco.style.transition = comTransicao ? 'transform 0.45s ease' : 'none';
-        deslocamentoAtual = -novoIndice * passo();
-        bloco.style.transform = 'translateX(' + deslocamentoAtual + 'px)';
+        bloco.style.transform = 'translateX(' + (-novoIndice * passo()) + 'px)';
         indice = novoIndice;
     }
 
@@ -92,49 +85,16 @@
     if (btnProximo) btnProximo.addEventListener('click', proximo);
     if (btnAnterior) btnAnterior.addEventListener('click', anterior);
 
-    function iniciarArraste(x) {
-        arrastando = true;
-        animando = false;
-        posInicial = x;
-        bloco.style.transition = 'none';
-        janela.classList.add('arrastando');
-    }
-
-    function moverArraste(x) {
-        if (!arrastando) return;
-        const delta = x - posInicial;
-        bloco.style.transform = 'translateX(' + (deslocamentoAtual + delta) + 'px)';
-    }
-
-    function finalizarArraste(x) {
-        if (!arrastando) return;
-        arrastando = false;
-        janela.classList.remove('arrastando');
-        const delta = x - posInicial;
-        const limite = passo() * LIMIAR_ARRASTE;
-
-        if (delta <= -limite) {
-            proximo();
-        } else if (delta >= limite) {
+    // Clique/toque na própria foto: lado esquerdo volta, lado direito avança.
+    janela.addEventListener('click', (e) => {
+        const rect = janela.getBoundingClientRect();
+        const cliqueX = e.clientX - rect.left;
+        if (cliqueX < rect.width / 2) {
             anterior();
         } else {
-            animando = true;
-            irPara(indice, true);
+            proximo();
         }
-    }
-
-    // Arraste com o mouse
-    janela.addEventListener('mousedown', (e) => {
-        e.preventDefault();
-        iniciarArraste(e.clientX);
     });
-    window.addEventListener('mousemove', (e) => moverArraste(e.clientX));
-    window.addEventListener('mouseup', (e) => finalizarArraste(e.clientX));
-
-    // Suporte a toque, para celular/tablet
-    janela.addEventListener('touchstart', (e) => iniciarArraste(e.touches[0].clientX), { passive: true });
-    janela.addEventListener('touchmove', (e) => moverArraste(e.touches[0].clientX), { passive: true });
-    janela.addEventListener('touchend', (e) => finalizarArraste(e.changedTouches[0].clientX));
 
     // Posição inicial, sem transição
     irPara(indice, false);
