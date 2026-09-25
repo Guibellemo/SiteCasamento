@@ -329,6 +329,68 @@ footer a:visited {
 
 
 
+
+
+
+
+
+
+/* =========================================
+   CONTROLE DE ÁUDIO
+   ========================================= */
+#controle-audio {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 8px 15px;
+    border-radius: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+#btn-mutar {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #e84c84;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#controle-volume {
+    width: 80px;
+    cursor: pointer;
+    accent-color: #e84c84; /* Usa a cor rosa do tema para o slider */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    #controle-audio {
+        top: 15px;
+        right: 15px;
+        padding: 5px 10px;
+    }
+
+    #controle-volume {
+        width: 60px; /* Encurta o slider no celular */
+    }
+}
+
+
+
+
+
+
+
+
+
+
 /* =========================================
    RESPONSIVIDADE (TABLETS E CELULARES)
    ========================================= */
